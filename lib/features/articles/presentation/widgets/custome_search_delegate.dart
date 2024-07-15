@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:space_flight/features/articles/domain/entities/article_entity.dart';
 import 'package:space_flight/features/articles/presentation/bloc/search_bloc/search_article_bloc.dart';
 import 'package:space_flight/features/articles/presentation/widgets/article_card.dart';
-import 'package:space_flight/features/articles/presentation/widgets/loading_widget.dart';
 
 class CustomSearchDelegate extends SearchDelegate {
   final ScrollController scrollController = ScrollController();
@@ -58,10 +57,9 @@ class CustomSearchDelegate extends SearchDelegate {
     return BlocBuilder<SearchArticleBloc, SearchArticleState>(
         builder: (context, state) {
       List<ArticleEntity> articles = [];
-      bool isLoading = false;
+
       if (state is SearchArticleLoading) {
         articles = state.oldArticles;
-        isLoading = true;
       } else if (state is SearchArticleLoaded) {
         articles = state.articles;
       } else if (state is SearchArticleError) {
