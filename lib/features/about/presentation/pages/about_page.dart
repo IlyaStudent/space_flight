@@ -14,14 +14,28 @@ class AboutPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text("This app can help you get information about flights"),
+              const Text(
+                "This app can help you get information about \nlast news about space flights",
+                textAlign: TextAlign.center,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: GestureDetector(
                   onTap: () => launchUrl(
                       Uri.parse("https://github.com/IlyaStudent/space_flight")),
                   child: const Text(
-                    "Other projects",
+                    "Github link",
+                    style: TextStyle(
+                        color: Colors.blue, fontStyle: FontStyle.italic),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: GestureDetector(
+                  onTap: () => launchUrl(Uri.parse("https://t.me/eluhaTvorog")),
+                  child: const Text(
+                    "TG link",
                     style: TextStyle(
                         color: Colors.blue, fontStyle: FontStyle.italic),
                   ),
