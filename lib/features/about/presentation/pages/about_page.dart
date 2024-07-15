@@ -19,7 +19,7 @@ class AboutPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: GestureDetector(
                   onTap: () => launchUrl(
-                      Uri.https("github.com", "IlyaStudent/med_posts")),
+                      Uri.parse("https://github.com/IlyaStudent/space_flight")),
                   child: const Text(
                     "Other projects",
                     style: TextStyle(
